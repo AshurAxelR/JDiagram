@@ -283,6 +283,13 @@ public class Data {
 	}
 	
 	/**
+	 * Remove all data rows.
+	 */
+	public void clear() {
+		rows.clear();
+	}
+	
+	/**
 	 * Find column index by column name. Lookup is relatively fast as it uses a hash map.
 	 * @param hdr column header
 	 * @return column index
