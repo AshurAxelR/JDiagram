@@ -1,3 +1,3 @@
 # JDiagram
 
-[**API Documentation**](https://ashurrafiev.github.io/JDiagram)
+[**API Documentation**](https://AshurAxelR.github.io/JDiagram)
