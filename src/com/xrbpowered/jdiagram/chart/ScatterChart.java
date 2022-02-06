@@ -78,9 +78,13 @@ public class ScatterChart extends Chart {
 			r.setZeroes(zerox, zeroy);
 			r.start(out, pop.style, pop.data.count(), pop.data);
 			for(Data.Row row : pop.data.rows()) {
-				double x = calcx(row.getNum(pop.hdrx));
-				double y = calcy(row.getNum(pop.hdry));
-				r.addPoint(x, y, row);
+				Double vx = row.getNum(pop.hdrx);
+				Double vy = row.getNum(pop.hdry);
+				if(vx!=null && vy!=null) {
+					double x = calcx(vx);
+					double y = calcy(vy);
+					r.addPoint(x, y, row);
+				}
 			}
 			r.finish();
 		}

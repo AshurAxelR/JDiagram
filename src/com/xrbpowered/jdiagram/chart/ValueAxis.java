@@ -78,11 +78,14 @@ public class ValueAxis extends Axis {
 			private Double x = null; 
 			@Override
 			public boolean hasNext() {
-				return (x==null || x<max && Double.isFinite(x)) && gridStep>zero();
+				return (x==null || x<max && nextValue()<=max && Double.isFinite(x)) && gridStep>zero();
+			}
+			private double nextValue() {
+				return (x==null) ? min : log ? x*gridStep : x+gridStep;
 			}
 			@Override
 			public Double next() {
-				x = (x==null) ? min : log ? x*gridStep : x+gridStep;
+				x = nextValue();
 				return x;
 			}
 		};
