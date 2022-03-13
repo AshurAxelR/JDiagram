@@ -166,6 +166,21 @@ public abstract class Formula<T> {
 		};
 	}
 
+	public static Formula<Integer> totalInt(final String... hdrs) {
+		return new Formula<Integer>() {
+			@Override
+			public Integer calc(Row row) {
+				int sum = 0;
+				for(String hdr : hdrs) {
+					Integer v = row.getInt(hdr);
+					if(v!=null)
+						sum += v;
+				}
+				return sum;
+			}
+		};
+	}
+
 	public static Formula<Integer> round(final Formula<Double> x) {
 		return new Formula<Integer>() {
 			@Override
@@ -189,6 +204,39 @@ public abstract class Formula<T> {
 			@Override
 			public Double calc(Row row) {
 				return x.calc(row) + y.calc(row);
+			}
+		};
+	}
+	
+	public static Formula<Double> total(final String... hdrs) {
+		return new Formula<Double>() {
+			@Override
+			public Double calc(Row row) {
+				double sum = 0;
+				for(String hdr : hdrs) {
+					Double v = row.getNum(hdr);
+					if(v!=null)
+						sum += v;
+				}
+				return sum;
+			}
+		};
+	}
+	
+	public static Formula<Double> average(final String... hdrs) {
+		return new Formula<Double>() {
+			@Override
+			public Double calc(Row row) {
+				double sum = 0;
+				int n = 0;
+				for(String hdr : hdrs) {
+					Double v = row.getNum(hdr);
+					if(v!=null) {
+						sum += v;
+						n++;
+					}
+				}
+				return n>0 ? sum / (double)n : null;
 			}
 		};
 	}

@@ -283,6 +283,22 @@ public class Data {
 	}
 	
 	/**
+	 * Get the first data row or {@code null} if the table is empty.
+	 * @return data row
+	 */
+	public Row firstRow() {
+		return rows.isEmpty() ? null : rows.get(0);
+	}
+
+	/**
+	 * Get the last data row or {@code null} if the table is empty.
+	 * @return data row
+	 */
+	public Row lastRow() {
+		return rows.isEmpty() ? null : rows.get(rows.size()-1);
+	}
+
+	/**
 	 * Remove all data rows.
 	 */
 	public void clear() {
