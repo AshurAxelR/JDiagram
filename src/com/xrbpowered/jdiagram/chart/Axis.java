@@ -7,6 +7,7 @@ public abstract class Axis {
 	public Anchor anchor = Anchor.zero;
 	public String label = null;
 	public Anchor labelAnchor = Anchor.left.offset(-30);
+	public Anchor numberAnchor = Anchor.middle;
 
 	public Axis setAnchor(Anchor anchor) {
 		this.anchor = anchor;
@@ -24,6 +25,11 @@ public abstract class Axis {
 		return this;
 	}
 	
+	public Axis setNumberAnchor(Anchor anchor) {
+		this.numberAnchor = anchor;
+		return this;
+	}
+
 	public abstract double calc(double v);
 	
 	public double zero() {
@@ -74,6 +80,18 @@ public abstract class Axis {
 			double labelx = chart.calcx(labelAnchor, x);
 			out.printf("<text x=\"%.1f\" y=\"%d\" text-anchor=\"middle\" transform=\"rotate(-90 %.1f,%d)\">%s</text>\n", labelx, -chart.chartHeight/2, labelx, -chart.chartHeight/2, label);
 		}
+	}
+
+	public void gridxNumber(PrintStream out, Chart chart, double v, String s) {
+		// TODO grid number positioning
+		if(s!=null)
+			out.printf("<text x=\"%.1f\" y=\"15\" text-anchor=\"%s\">%s</text>\n", calcx(chart, v), numberAnchor.innerAlign(), s);
+	}
+
+	public void gridyNumber(PrintStream out, Chart chart, double v, String s) {
+		// TODO grid number positioning
+		if(s!=null)
+			out.printf("<text x=\"-5\" y=\"%.1f\" text-anchor=\"end\" >%s</text>\n", calcy(chart, v)+5, s); // TODO proper numberOffs configuration
 	}
 
 }

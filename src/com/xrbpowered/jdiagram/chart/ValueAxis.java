@@ -92,17 +92,11 @@ public class ValueAxis extends Axis {
 	}
 
 	public void gridxNumber(PrintStream out, Chart chart, double v) {
-		// TODO grid number positioning
-		String s = numberFmt.format(v);
-		if(s!=null)
-			out.printf("<text x=\"%.1f\" y=\"15\" text-anchor=\"middle\">%s</text>\n", calcx(chart, v), s);
+		gridxNumber(out, chart, v, numberFmt.format(v));
 	}
-	
+
 	public void gridyNumber(PrintStream out, Chart chart, double v) {
-		// TODO grid number positioning
-		String s = numberFmt.format(v);
-		if(s!=null)
-			out.printf("<text x=\"-5\" y=\"%.1f\" text-anchor=\"end\" >%s</text>\n", calcy(chart, v)+5, s); // TODO proper numberOffs configuration
+		gridyNumber(out, chart, v, numberFmt.format(v));
 	}
 
 }

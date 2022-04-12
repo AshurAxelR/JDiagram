@@ -98,8 +98,11 @@ public class HSetChart extends Chart {
 		out.println("<g>");
 		if(axisLineStyle!=null)
 			axisx.printAxisX(out, this, axisy.zeroy(this));
-		// for(Iterator<Double> d=axisx.gridPoints(); d.hasNext();)
-		//	axisx.gridxNumber(out, this, d.next());
+		int i = 0;
+		for(Data.Row row : axisx.data.rows()) {
+			axisx.gridxNumber(out, this, i, row.get(axisx.labelHdr)); // TODO anchor point based on renderer
+			i++;
+		}
 		out.println("</g>");
 
 		out.println("<g>");
