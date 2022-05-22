@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Axis</title>
+<meta name="date" content="2022-05-22">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
 <link rel="stylesheet" href="../../../../doc.css" />
@@ -42,6 +43,10 @@ Axis</dd>
 <code><a href="Anchor.html" title="com.xrbpowered.jdiagram.chart.Anchor">Anchor</a></code></td>
 <td><code><span class="name"><a href="#labelAnchor">labelAnchor</a></span></code>
 </td></tr>
+<tr><td class="mods">
+<code><a href="Anchor.html" title="com.xrbpowered.jdiagram.chart.Anchor">Anchor</a></code></td>
+<td><code><span class="name"><a href="#numberAnchor">numberAnchor</a></span></code>
+</td></tr>
 </table>
 </div>
 <div class="summary-item">
@@ -77,7 +82,15 @@ Axis</dd>
 </td></tr>
 <tr><td class="mods">
 <code>void</code></td>
+<td><code><span class="name"><a href="#gridxNumber-java.io.PrintStream-com.xrbpowered.jdiagram.chart.Chart-double-java.lang.String-">gridxNumber</a></span> (<a class="extern" title="java.io.PrintStream">PrintStream</a> out, <a href="Chart.html" title="com.xrbpowered.jdiagram.chart.Chart">Chart</a> chart, double v, <a class="extern" title="java.lang.String">String</a> s)</code>
+</td></tr>
+<tr><td class="mods">
+<code>void</code></td>
 <td><code><span class="name"><a href="#gridyLine-java.io.PrintStream-com.xrbpowered.jdiagram.chart.Chart-double-">gridyLine</a></span> (<a class="extern" title="java.io.PrintStream">PrintStream</a> out, <a href="Chart.html" title="com.xrbpowered.jdiagram.chart.Chart">Chart</a> chart, double v)</code>
+</td></tr>
+<tr><td class="mods">
+<code>void</code></td>
+<td><code><span class="name"><a href="#gridyNumber-java.io.PrintStream-com.xrbpowered.jdiagram.chart.Chart-double-java.lang.String-">gridyNumber</a></span> (<a class="extern" title="java.io.PrintStream">PrintStream</a> out, <a href="Chart.html" title="com.xrbpowered.jdiagram.chart.Chart">Chart</a> chart, double v, <a class="extern" title="java.lang.String">String</a> s)</code>
 </td></tr>
 <tr><td class="mods">
 <code>void</code></td>
@@ -98,6 +111,10 @@ Axis</dd>
 <tr><td class="mods">
 <code><a href="Axis.html" title="com.xrbpowered.jdiagram.chart.Axis">Axis</a></code></td>
 <td><code><span class="name"><a href="#setLabel-java.lang.String-com.xrbpowered.jdiagram.chart.Anchor-">setLabel</a></span> (<a class="extern" title="java.lang.String">String</a> label, <a href="Anchor.html" title="com.xrbpowered.jdiagram.chart.Anchor">Anchor</a> labelAnchor)</code>
+</td></tr>
+<tr><td class="mods">
+<code><a href="Axis.html" title="com.xrbpowered.jdiagram.chart.Axis">Axis</a></code></td>
+<td><code><span class="name"><a href="#setNumberAnchor-com.xrbpowered.jdiagram.chart.Anchor-">setNumberAnchor</a></span> (<a href="Anchor.html" title="com.xrbpowered.jdiagram.chart.Anchor">Anchor</a> anchor)</code>
 </td></tr>
 <tr><td class="mods">
 <code>double</code></td>
@@ -176,6 +193,11 @@ Axis</dd>
 <div class="comment"><p></div>
 </div>
 <div class="member">
+<h3><a class="alink" id="numberAnchor" href="#numberAnchor">numberAnchor</a></h3>
+<pre>public <a href="Anchor.html" title="com.xrbpowered.jdiagram.chart.Anchor">Anchor</a> <span class="name">numberAnchor</span>;</pre>
+<div class="comment"><p></div>
+</div>
+<div class="member">
 <h3><a class="alink" id="setAnchor-com.xrbpowered.jdiagram.chart.Anchor-" href="#setAnchor-com.xrbpowered.jdiagram.chart.Anchor-">setAnchor</a></h3>
 <pre>public <a href="Axis.html" title="com.xrbpowered.jdiagram.chart.Axis">Axis</a> <span class="name">setAnchor</span> (
 	<a href="Anchor.html" title="com.xrbpowered.jdiagram.chart.Anchor">Anchor</a> anchor
@@ -194,6 +216,13 @@ Axis</dd>
 <h3><a class="alink" id="setLabel-java.lang.String-" href="#setLabel-java.lang.String-">setLabel</a></h3>
 <pre>public <a href="Axis.html" title="com.xrbpowered.jdiagram.chart.Axis">Axis</a> <span class="name">setLabel</span> (
 	<a class="extern" title="java.lang.String">String</a> label
+);</pre>
+<div class="comment"><p></div>
+</div>
+<div class="member">
+<h3><a class="alink" id="setNumberAnchor-com.xrbpowered.jdiagram.chart.Anchor-" href="#setNumberAnchor-com.xrbpowered.jdiagram.chart.Anchor-">setNumberAnchor</a></h3>
+<pre>public <a href="Axis.html" title="com.xrbpowered.jdiagram.chart.Axis">Axis</a> <span class="name">setNumberAnchor</span> (
+	<a href="Anchor.html" title="com.xrbpowered.jdiagram.chart.Anchor">Anchor</a> anchor
 );</pre>
 <div class="comment"><p></div>
 </div>
@@ -272,6 +301,26 @@ Axis</dd>
 	<a class="extern" title="java.io.PrintStream">PrintStream</a> out,
 	<a href="Chart.html" title="com.xrbpowered.jdiagram.chart.Chart">Chart</a> chart,
 	double zerox
+);</pre>
+<div class="comment"><p></div>
+</div>
+<div class="member">
+<h3><a class="alink" id="gridxNumber-java.io.PrintStream-com.xrbpowered.jdiagram.chart.Chart-double-java.lang.String-" href="#gridxNumber-java.io.PrintStream-com.xrbpowered.jdiagram.chart.Chart-double-java.lang.String-">gridxNumber</a></h3>
+<pre>public void <span class="name">gridxNumber</span> (
+	<a class="extern" title="java.io.PrintStream">PrintStream</a> out,
+	<a href="Chart.html" title="com.xrbpowered.jdiagram.chart.Chart">Chart</a> chart,
+	double v,
+	<a class="extern" title="java.lang.String">String</a> s
+);</pre>
+<div class="comment"><p></div>
+</div>
+<div class="member">
+<h3><a class="alink" id="gridyNumber-java.io.PrintStream-com.xrbpowered.jdiagram.chart.Chart-double-java.lang.String-" href="#gridyNumber-java.io.PrintStream-com.xrbpowered.jdiagram.chart.Chart-double-java.lang.String-">gridyNumber</a></h3>
+<pre>public void <span class="name">gridyNumber</span> (
+	<a class="extern" title="java.io.PrintStream">PrintStream</a> out,
+	<a href="Chart.html" title="com.xrbpowered.jdiagram.chart.Chart">Chart</a> chart,
+	double v,
+	<a class="extern" title="java.lang.String">String</a> s
 );</pre>
 <div class="comment"><p></div>
 </div>

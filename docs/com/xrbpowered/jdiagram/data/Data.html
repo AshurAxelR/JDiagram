@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Data</title>
+<meta name="date" content="2022-05-22">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
 <link rel="stylesheet" href="../../../../doc.css" />
@@ -75,6 +76,10 @@ Data</dd>
 <td><code><span class="name"><a href="#appendMarked-com.xrbpowered.jdiagram.data.Data-java.lang.String-java.lang.String-">appendMarked</a></span> (<a href="Data.html" title="com.xrbpowered.jdiagram.data.Data">Data</a> other, <a class="extern" title="java.lang.String">String</a> markHdr, <a class="extern" title="java.lang.String">String</a> mark)</code>
 <br/>Append and mark data from another table respecting column names.</td></tr>
 <tr><td class="mods">
+<code>void</code></td>
+<td><code><span class="name"><a href="#clear-">clear</a></span> ()</code>
+<br/>Remove all data rows.</td></tr>
+<tr><td class="mods">
 <code>int</code></td>
 <td><code><span class="name"><a href="#colCount-">colCount</a></span> ()</code>
 <br/>Get number of columns.</td></tr>
@@ -99,6 +104,10 @@ Data</dd>
 <td><code><span class="name"><a href="#findCol-java.lang.String-">findCol</a></span> (<a class="extern" title="java.lang.String">String</a> hdr)</code>
 <br/>Find column index by column name.</td></tr>
 <tr><td class="mods">
+<code><a href="Data.Row.html" title="com.xrbpowered.jdiagram.data.Data.Row">Data.Row</a></code></td>
+<td><code><span class="name"><a href="#firstRow-">firstRow</a></span> ()</code>
+<br/>Get the first data row or <code>null</code> if the table is empty.</td></tr>
+<tr><td class="mods">
 <code>&lt;T&gt;void</code></td>
 <td><code><span class="name"><a href="#fold-com.xrbpowered.jdiagram.data.Formula.Var-com.xrbpowered.jdiagram.data.Formula-">fold</a></span> (<a href="Formula.Var.html" title="com.xrbpowered.jdiagram.data.Formula.Var">Formula.Var</a>&lt;T&gt; acc, <a href="Formula.html" title="com.xrbpowered.jdiagram.data.Formula">Formula</a>&lt;T&gt; calc)</code>
 </td></tr>
@@ -114,6 +123,10 @@ Data</dd>
 <code>int[]</code></td>
 <td><code><span class="name"><a href="#indexMap-java.lang.String:A-">indexMap</a></span> (<a class="extern" title="java.lang.String">String</a>[] hdrs)</code>
 <br/>Find column indices by column names.</td></tr>
+<tr><td class="mods">
+<code><a href="Data.Row.html" title="com.xrbpowered.jdiagram.data.Data.Row">Data.Row</a></code></td>
+<td><code><span class="name"><a href="#lastRow-">lastRow</a></span> ()</code>
+<br/>Get the last data row or <code>null</code> if the table is empty.</td></tr>
 <tr><td class="mods">
 <code><a href="Data.html" title="com.xrbpowered.jdiagram.data.Data">Data</a></code></td>
 <td><code><span class="name"><a href="#limit-int-">limit</a></span> (int count)</code>
@@ -362,6 +375,23 @@ Data</dd>
 <div class="comment"><p>Get data rows as unmodifiable iterable.</div>
 <h5>Returns</h5>
 <p class="ind">data rows</div>
+<div class="member">
+<h3><a class="alink" id="firstRow-" href="#firstRow-">firstRow</a></h3>
+<pre>public <a href="Data.Row.html" title="com.xrbpowered.jdiagram.data.Data.Row">Data.Row</a> <span class="name">firstRow</span> ();</pre>
+<div class="comment"><p>Get the first data row or <code>null</code> if the table is empty.</div>
+<h5>Returns</h5>
+<p class="ind">data row</div>
+<div class="member">
+<h3><a class="alink" id="lastRow-" href="#lastRow-">lastRow</a></h3>
+<pre>public <a href="Data.Row.html" title="com.xrbpowered.jdiagram.data.Data.Row">Data.Row</a> <span class="name">lastRow</span> ();</pre>
+<div class="comment"><p>Get the last data row or <code>null</code> if the table is empty.</div>
+<h5>Returns</h5>
+<p class="ind">data row</div>
+<div class="member">
+<h3><a class="alink" id="clear-" href="#clear-">clear</a></h3>
+<pre>public void <span class="name">clear</span> ();</pre>
+<div class="comment"><p>Remove all data rows.</div>
+</div>
 <div class="member">
 <h3><a class="alink" id="findCol-java.lang.String-" href="#findCol-java.lang.String-">findCol</a></h3>
 <pre>public int <span class="name">findCol</span> (
