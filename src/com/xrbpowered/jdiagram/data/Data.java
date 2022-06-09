@@ -241,6 +241,14 @@ public class Data {
 	}
 	
 	/**
+	 * Get all column names. Returns a copy of the original array.
+	 * @return array of column names
+	 */
+	public String[] headers() {
+		return Arrays.copyOf(headers, headers.length);
+	}
+	
+	/**
 	 * Get column name by column index.
 	 * @param index column index
 	 * @return column name
@@ -280,6 +288,20 @@ public class Data {
 	 */
 	public Iterable<Row> rows() {
 		return Collections.unmodifiableList(rows);
+	}
+	
+	/**
+	 * Get data row by index.
+	 * @param index row index starting at 0
+	 * @return data row
+	 * @throws IndexOutOfBoundsException if {@code index<0} or {@code index>=count()}
+	 * @see #count()
+	 * @see #rows()
+	 * @see #firstRow()
+	 * @see #lastRow()
+	 */
+	public Row row(int index) {
+		return rows.get(index);
 	}
 	
 	/**
