@@ -18,11 +18,16 @@ public interface NumberFormatter extends ValueFormatter<Double> {
 		};
 	}
 	
-	public static NumberFormatter percent = new NumberFormatter() {
-		@Override
-		public String format(Double v) {
-			return v==null ? null : String.format("%.2f%%", v*100.0);
-		}
-	};
+	public static NumberFormatter percent(final int prec) {
+		final String fmt = String.format("%%.%df%%%%", prec);
+		return new NumberFormatter() {
+			@Override
+			public String format(Double x) {
+				return x==null ? null : String.format(fmt, x*100.0);
+			}
+		};
+	}
+	
+	public static NumberFormatter percent = percent(2);
 	
 }
